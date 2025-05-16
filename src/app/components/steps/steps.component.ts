@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './steps.component.html',
-  styleUrl: './steps.component.scss',
+  styleUrls: ['./steps.component.scss'],
 })
 export class StepsComponent {
   currentStep = 0;

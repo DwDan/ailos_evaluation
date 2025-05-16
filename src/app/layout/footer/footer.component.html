@@ -1,0 +1,10 @@
+<footer *ngIf="footer.config$ | async as cfg" class="footer px-4 bg-white border-top text-left py-3">
+  <button
+    *ngFor="let btn of cfg.buttons"
+    class="btn me-2"
+    [ngClass]="btn.class"
+    (click)="btn.action()"
+  >
+    {{ btn.text }}
+  </button>
+</footer>
