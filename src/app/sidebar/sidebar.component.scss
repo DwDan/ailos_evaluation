@@ -1,0 +1,12 @@
+@import '../../styles/variables.scss';
+
+.sidebar {
+  width: 100px;
+  background-color: $primary-color;
+  color: white;
+  min-height: 100vh;
+  i {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}

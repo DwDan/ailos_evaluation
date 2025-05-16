@@ -1,0 +1,12 @@
+<div class="stepper-container d-flex justify-content-between px-5">
+  <ng-container *ngFor="let step of steps; let i = index">
+    <div class="step text-center" [class.active]="currentStep === i">
+      <div class="stepper-wrapper">
+        <div class="line left" *ngIf="i > 0"></div>
+        <div class="circle"></div>
+        <div class="line right" *ngIf="i < steps.length - 1"></div>
+      </div>
+      <div class="step-label mt-2">{{ step }}</div>
+    </div>
+  </ng-container>
+</div>

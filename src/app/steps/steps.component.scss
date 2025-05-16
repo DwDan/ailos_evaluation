@@ -1,0 +1,61 @@
+.stepper-container {
+    padding: 20px;
+    
+  .step {
+    flex: 1;
+    position: relative;
+
+    .stepper-wrapper {
+      position: relative;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .circle {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      background-color: #e6eef2;
+      z-index: 1;
+    }
+
+    .line {
+      position: absolute;
+      height: 2px;
+      background-color: #ccc;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .line.left {
+      left: 0;
+      right: 50%;
+      margin-right: 10px;
+    }
+
+    .line.right {
+      left: 50%;
+      right: 0;
+      margin-left: 10px;
+    }
+
+    .step-label {
+      font-size: 14px;
+      color: #6c757d;
+    }
+
+    &.active {
+      .circle {
+        border-color: #165c7d;
+      }
+
+      .step-label {
+        color: #165c7d;
+        font-weight: 600;
+      }
+    }
+  }
+}
