@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-steps',
@@ -9,6 +9,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./steps.component.scss'],
 })
 export class StepsComponent {
-  currentStep = 0;
-  steps = ['Início', 'Documentos', 'Dados cadastrais', 'Admissão'];
+  @Input() currentStep = 0;
+  @Input() steps: string[] = [];
 }

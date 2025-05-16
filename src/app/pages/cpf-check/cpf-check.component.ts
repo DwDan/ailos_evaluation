@@ -8,6 +8,8 @@ import {
 } from '@angular/forms';
 import { StepsComponent } from '../../components/steps/steps.component';
 import { PageBase } from '../shared/page.base';
+import { injectI18nLiterals } from '../../core/factorys/i18n-factory.provider';
+import { cpfCheckI18n } from './i18n/cpf-check.i18n';
 
 @Component({
   selector: 'app-cpf-check',
@@ -19,26 +21,20 @@ import { PageBase } from '../shared/page.base';
 export class CpfCheckComponent extends PageBase {
   form: FormGroup;
   showResult = false;
+  literals = injectI18nLiterals(cpfCheckI18n);
 
   constructor(private fb: FormBuilder) {
     super();
 
-    this.headerService.setTitle('Nova Admissão Cooperado');
-    this.headerService.setBreadcrumb([
-      'Cadastro',
-      'Admissão do Cooperado',
-      'Nova Admissão',
-    ]);
+  this.headerService.setTitle(this.literals.page);
+  this.headerService.setBreadcrumb(this.literals.breadcrumb.slice());
 
-    this.footerService.set({
-      buttons: [
-        {
-          text: 'Dicas para abertura da conta',
-          class: 'btn-outline-primary',
-          action: () => console.log('clicado'),
-        },
-      ],
-    });
+  this.footerService.set({
+    buttons: this.literals.footer.buttons.map(btn => ({
+      ...btn,
+      action: () => console.log('clicado')
+    }))
+  });
 
     this.form = this.fb.group({
       cpf: ['', [Validators.required]],

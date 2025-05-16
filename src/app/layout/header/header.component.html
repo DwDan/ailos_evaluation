@@ -7,6 +7,7 @@
       (headerService.breadcrumb$ | async)?.join(" / ")
     }}</small>
   </div>
+
   <div class="header-actions d-flex align-items-center gap-3">
     <div class="notification position-relative">
       <i class="bi bi-bell fs-4"></i>
@@ -15,6 +16,7 @@
         >7</span
       >
     </div>
+    <app-language-switcher></app-language-switcher>
     <button class="btn btn-outline-primary btn-sm">VIACREDI</button>
     <img
       src="assets/avatar.png"
