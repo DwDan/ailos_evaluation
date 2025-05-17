@@ -1,5 +1,7 @@
+// language-switcher.component.ts
 import { Component } from '@angular/core';
 import { I18nService } from '../../core/services/i18n.service';
+import { WindowRef } from '../../core/services/window-ref.service';
 import { LanguageType } from '../../core/types/language.type';
 
 @Component({
@@ -12,7 +14,7 @@ import { LanguageType } from '../../core/types/language.type';
 export class LanguageSwitcherComponent {
   currentLanguage: LanguageType;
 
-  constructor(private i18n: I18nService) {
+  constructor(private i18n: I18nService, private windowRef: WindowRef) {
     this.currentLanguage = this.i18n.getCurrentLanguage() || 'pt';
   }
 
@@ -20,6 +22,6 @@ export class LanguageSwitcherComponent {
     const newLang = this.currentLanguage === 'pt' ? 'en' : 'pt';
     this.i18n.setLanguage(newLang);
     this.currentLanguage = newLang;
-    window.location.reload();
+    this.windowRef.nativeWindow.location.reload();
   }
 }
