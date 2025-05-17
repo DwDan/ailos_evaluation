@@ -13,13 +13,13 @@ export const identificationCheckI18n = {
     resultSubtitle: 'Consulta na Receita Federal',
     resultNameLabel: 'Nome',
     resultStatusLabel: 'Situação do CPF',
+    cpfErrorValidation: 'CPF inválido. Por favor, verifique e tente novamente.',
     steps: ['Início', 'Documentos', 'Dados cadastrais', 'Admissão'],
     footer: {
-
-      tipButton:         {
-          text: 'Dicas para abertura da conta',
-          class: 'btn-outline-primary',
-        },
+      tipButton: {
+        text: 'Dicas para abertura da conta',
+        class: 'btn-outline-primary',
+      },
 
       newAdmission: {
         text: 'Iniciar nova admission',
@@ -48,6 +48,7 @@ export const identificationCheckI18n = {
     resultSubtitle: 'Check with the Federal Revenue',
     resultNameLabel: 'Name',
     resultStatusLabel: 'SSN Status',
+    cpfErrorValidation: 'Invalid CPF. Please check and try again.',
     steps: ['Start', 'Documents', 'Personal data', 'Admission'],
     footer: {
       tipButton: {

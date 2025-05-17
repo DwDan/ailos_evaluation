@@ -53,6 +53,10 @@ export class IdentificationCheckComponent extends PageBase {
             this.identificationStatus = result;
             this.form.reset();
             this.setFooterButtons(result.valid);
+
+            if(!result.valid){
+              alert(this.literals.cpfErrorValidation);
+            }
           },
         });
     }
