@@ -1,13 +1,10 @@
 @import 'variables';
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/bootstrap';
 
 body {
   margin: 0;
   background-color: #e6eef2;
   font-family: $font-family;
-}
-
-.circle {
-  width: 16px;
-  height: 16px;
-  display: inline-block;
 }
