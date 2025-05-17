@@ -1,27 +1,92 @@
-# AilosEvaluation
+# Ailos Evaluation – Angular Challenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
+Este projeto é parte do processo de avaliação técnica da Ailos, com o objetivo de implementar um onboarding para cooperados utilizando Angular.
 
-## Development server
+## 🔍 Descrição
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+A aplicação consiste em duas páginas principais:
 
-## Code scaffolding
+1. **Consulta de CPF**  
+   O usuário deve informar um CPF válido.  
+   - Se o CPF for **inválido**, é exibida uma mensagem de erro.
+   - Se o CPF for **válido**, o usuário é redirecionado para a próxima etapa.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. **Exibição dos dados do cooperado**  
+   Após uma consulta bem-sucedida, são exibidos os dados simulados do cooperado conforme o protótipo fornecido.
 
-## Build
+## 🛠️ Tecnologias utilizadas
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Angular 17+
+- TypeScript
+- Reactive Forms
+- Bootstrap Icons
+- HTML/CSS (customizado manualmente, sem bibliotecas externas de UI)
+- Docker (execução opcional)
 
-## Running unit tests
+## ▶️ Como executar o projeto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 🔹 Opção 1 – Local (Angular CLI)
 
-## Running end-to-end tests
+```bash
+git clone https://github.com/DwDan/ailos_evaluation.git
+cd ailos_evaluation
+npm install
+ng serve
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Acesse em: `http://localhost:4200`
 
-## Further help
+### 🔹 Opção 2 – Via Docker
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+docker build -t ailos-angular .
+docker run -d -p 4200:80 ailos-angular
+```
+
+Acesse em: `http://localhost:4200`
+
+> Observação: o container serve a aplicação via Nginx.
+
+## 📂 Estrutura de pastas
+
+```
+src/
+├── app/
+│ ├── components/ # Componentes reutilizáveis e de apoio à interface
+│ ├── core/ # Serviços auxiliares e lógica central (ex: validações)
+│ ├── layout/ # Componentes de layout (header, footer, sidebar, etc.)
+│ ├── pages/ # Páginas principais da aplicação (CPF, Cooperado)
+│ └── app-route.ts # Definição centralizada das rotas
+│
+├── assets/ # Imagens, ícones e outros arquivos estáticos
+└── styles/ # Estilos globais e variáveis personalizadas do Bootstrap
+```
+
+## 🎯 Critérios atendidos
+
+- [x] Validação de CPF
+- [x] Mensagem de erro em caso de CPF inválido
+- [x] Redirecionamento com CPF válido
+- [x] Tela de dados do cooperado com base no protótipo Figma
+- [x] Estilo e layout customizados seguindo o design fornecido
+- [x] Código limpo, componentizado e de fácil manutenção
+- [x] Possibilidade de execução via Docker
+
+## 🧪 Melhorias futuras (não obrigatórias para o desafio)
+
+- Componentes de notificação visual (toast/snackbar)
+- Integração com serviço de backend simulado (API Mock)
+
+## 📎 Referências
+
+- [Protótipo Figma](https://www.figma.com/proto/yKoQbDl7ucMMZm79N9plKK/Onboarding-do-cooperado-%7C-PF)
+- [ZeroHeight – UI States](https://zeroheight.com/208c7c4a6/p/726c39-ui-states)
+
+## 📬 Entrega
+
+O código está disponível neste repositório público e pode ser clonado e executado diretamente.  
+Para dúvidas ou validação técnica, estou à disposição.
+
+---
+
+Desenvolvido por [Daniel William Pereira da Silva](https://github.com/DwDan)
